@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sudoku Answer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+      body {
+          background-color: #f8f9fa;
+      }
+      h1 {
+          font-size: 48px;
+          margin-top: 60px;
+          margin-bottom: 40px;
+          color: #007bff;
+          text-shadow: 2px 2px #d9d9d9;
+          text-align: center;
+      }
+      .card {
+          border-radius: 10px;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+          border: none;
+          margin-bottom: 60px;
+      }
+      .card-body {
+          font-size: 36px;
+          color: #007bff;
+          text-shadow: 1px 1px #d9d9d9;
+          background-color: #fff;
+      }
+      .card-body p {
+          margin-bottom: 0;
+          line-height: 1.2;
+      }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8">
+      <h1>Your Answer</h1>
+      <div class="card">
+        <div class="card-body text-center">
+          <p><%= params[:answer] %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

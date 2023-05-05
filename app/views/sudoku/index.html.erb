@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sudoku</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+      /* Custom styles for the Sudoku board */
+      .table td {
+          width: 50px;
+          height: 50px;
+          text-align: center;
+          vertical-align: middle;
+          font-weight: bold;
+      }
+      .table input {
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          font-size: 24px;
+          font-weight: bold;
+          border: none;
+          border-radius: 0;
+      }
+  </style>
+</head>
+<body>
+<div class="container-fluid bg-primary py-4">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="text-center text-white">Sudoku</h1>
+    </div>
+  </div>
+</div>
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10">
+      <form method="post" action="/sudoku">
+        <table class="table table-bordered table-hover text-center">
+          <% (0..8).each do |row| %>
+            <tr>
+              <% (0..8).each do |col| %>
+                <% if @sudoku[row][col] == 0 %>
+                  <td class="p-0">
+                    <input type="text" name="cell[<%= row %>][<%= col %>]" class="form-control" maxlength="1" value="">
+                  </td>
+                <% else %>
+                  <td><%= @sudoku[row][col] %></td>
+                <% end %>
+              <% end %>
+            </tr>
+          <% end %>
+        </table>
+
+        <div class="row justify-content-center">
+          <%= button_to "Check", { action: :take_params_and_fill }, method: :post, class: "btn btn-primary mr-3" %>
+          <%= button_to "Easy", { action: :index, difficulty: "5" }, method: :post, class: "btn btn-success mr-3" %>
+          <%= button_to "Medium", { action: :index, difficulty: "10" }, method: :post, class: "btn btn-warning mr-3" %>
+          <%= button_to "Hard", { action: :index, difficulty: "30" }, method: :post, class: "btn btn-danger mr-3" %>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
