@@ -4,18 +4,12 @@
 
 * Rails version 7
 
-* System dependencies
+* Configuration all config stored in controller file
 
-* Configuration 
+* Database creation no database
 
-* Database creation
+* How to run the test suite: rails s > localhost:port
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+* Deployment instructions use linux or windows
 
 * ...
